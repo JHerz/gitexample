@@ -34,11 +34,19 @@ public class Gradebook {
                 }  
                 System.out.print("Would you like to add another grade? (y/n): ");
                 choice2 = sc.next();
+				 while(!choice2.equalsIgnoreCase("y")&& !choice2.equalsIgnoreCase("n")){
+                    System.out.println("please enter either \"y\" or \"n\"");
+                    choice2 = sc.next();
+                    }
             }
             
         System.out.print("Would you like to add another student? (y/n): ");
         choice = sc.next();
-        i++;
+        while(!choice.equalsIgnoreCase("y")&& !choice.equalsIgnoreCase("n")){
+            System.out.println("please enter either \"y\" or \"n\"");
+            choice = sc.next();
+            }
+		i++;
         }
     //for(int x = 0; x < students.size(); x++)
     //System.out.println(students.get(x).getName() + ": " + students.get(x).getAverage());
@@ -53,7 +61,11 @@ public class Gradebook {
             }
         System.out.println("Would you like to view another student's average? (y/n) ");
         choice3 = sc.next();
-        }
+        while(!choice3.equalsIgnoreCase("y")&& !choice3.equalsIgnoreCase("n")){
+            System.out.println("please enter either \"y\" or \"n\"");
+            choice3 = sc.next();
+            }
+		}
     System.out.println("Goodbye!");
     }
         }
