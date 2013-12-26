@@ -19,11 +19,22 @@ public class Gradebook {
             students.add(new Student(name));
             String choice2 = "y";
             while(choice2.equalsIgnoreCase("y")){
-                System.out.println("Please enter a grade: ");
-                students.get(i).addGrade(sc.nextInt());
+                boolean valid = false;
+                while (valid == false){
+                    System.out.println("Please enter a grade: ");
+                    int grade = sc.nextInt();
+                    if (grade<0 || grade>100){
+                        System.out.println("Sorry, a grade must be between 1 and 100");
+                        valid = false;
+                        }   
+                    else{
+                        valid = true;
+                        students.get(i).addGrade(grade);
+                        }   
+                }  
                 System.out.print("Would you like to add another grade? (y/n): ");
                 choice2 = sc.next();
-                }
+            }
             
         System.out.print("Would you like to add another student? (y/n): ");
         choice = sc.next();
